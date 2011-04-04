@@ -1,0 +1,7 @@
+*) 3d map generator
+*) change name from mario (probably copyrighted)
+*) traps (falling/catapulting)
+*) add messages "you are no longer poisoned/blinded/confused"
+
+bugs:
+*) level gained by pipe does not update panel

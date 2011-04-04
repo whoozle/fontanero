@@ -1,0 +1,246 @@
+	#wrapper {
+		position: relative;
+		border: 1px solid #000;
+		overflow: hidden;
+		background: black;
+	}
+	#map {
+		margin-top: 16px;
+		position: absolute;
+		left: 0; top: 0;
+	}
+	/* 	Floor and roof:
+		====================================================================== */
+		#floor {
+			background: #333;
+			-moz-transform: scale(1, 0.5) skew(-45deg, 45deg);
+			-moz-transform-origin: 0% 0%;
+
+			-webkit-transform: scale(1, 0.5) skew(-45deg, 45deg);
+			-webkit-transform-origin: 0% 0%;
+
+			-o-transform: scale(1, 0.5) skew(-45deg, 45deg);
+			-o-transform-origin: 0% 0%;
+			}
+			.u {
+				position: absolute;
+				width: 32px;
+				height: 32px;
+				background: black;
+				}
+	/* 	Walls & doors:
+		====================================================================== */
+		#walls {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+			.w {
+				display: block;
+				position: absolute;
+				left: 50%;
+				width: 32px;
+				height: 32px;
+				padding-top: 16px;	/* WALL_HEIGHT - TILE_SIZE */
+				-moz-transform-origin: 100% 0;
+				-webkit-transform-origin: 100% 0;
+				-o-transform-origin: 100% 0;
+/*				background: url('wall.png') repeat;*/
+				}
+		/* 	Walls:
+			---------------------------------------------------------------------- */
+			.w {
+				background: green;
+				}
+				.r, .l.a {
+					margin-top:-32px;
+					}
+				.r {
+					background: #060;
+					-moz-transform: skew(0deg, -26.7deg);
+					-webkit-transform: skew(0deg, -26.7deg);
+					-o-transform: skew(0deg, -26.7deg);
+					}
+				.r.a {
+					margin-top: -48px;
+					}
+				.r.a, .l {
+					margin-left: -32px;
+					}
+				.l {
+					-moz-transform: skew(0deg, 26.7deg);
+					-webkit-transform: skew(0deg, 26.7deg);
+					-o-transform: skew(0deg, 26.7deg);
+					margin-top: -16px;
+					}
+				.l.a {
+					opacity: 0.7;
+					margin-left: 0;
+					}
+				.a {
+					opacity: 0.8;
+					background: black;
+					background: -moz-linear-gradient(bottom center, black 95%, rgba(0,204,0,0));
+					background: -webkit-gradient(linear, left bottom, left top, color-stop(0.95, black), to(rgba(0,204,0,0)));
+					}
+			/* 	Wall decorations:
+				---------------------------------------------------------------------- */
+				.d {
+					font-family: 'Webdings';
+					font-size: 26px;
+					font-weight: normal;
+					text-align: center;
+					}
+					.paint:after {
+						content: '\f0ad';
+						}
+					.switch:after {
+						content: '\f0bc';
+					}
+					.plug:after {
+						content: '\f0bd';
+					}
+					.display:after {
+						content: '\f0be';
+					}
+					.calendar:after {
+						content: '\f0a6';
+					}
+					.ibelieve:after {
+						content: '\f085';
+					}
+				
+				
+/* 	Special zones:
+	====================================================================== */
+/* 	Enter:
+	---------------------------------------------------------------------- */
+	.enter, .exit {
+		width: 64px;
+		height: 64px;
+		margin-left: -32px;
+	}
+	.enter, .exit, 
+	.enter:after, .exit:after,
+	.enter:before, .exit:before {
+		display: block;
+		position: absolute;
+	}
+	.enter:after, .exit:after {
+		left: 10px; top: -12px;
+		font-family: 'Wingdings';
+		-moz-transform-origin: 100% 0;
+		-moz-transform: skew(0deg, 30deg);
+		-webkit-transform-origin: 100% 0;
+		-webkit-transform: skew(0deg, 30deg);
+		-o-transform-origin: 100% 0;
+		-o-transform: skew(0deg, 30deg);
+		font-size: 60px;
+		text-shadow: 2px -2px 0px #000;
+	}
+		.enter:before, .exit:before {
+			content: ' ';
+			left: -22px; top: 8px;
+			-moz-transform: scale(1, 0.5) skew(-45deg, 45deg);
+			-moz-transform-origin: 100% 100%;
+			-webkit-transform: scale(1, 0.5) skew(-45deg, 45deg);
+			-webkit-transform-origin: 100% 100%;
+			-o-transform: scale(1, 0.5) skew(-45deg, 45deg);
+			-o-transform-origin: 100% 100%;
+			width: 50px;
+			height: 50px;
+			-moz-border-radius: 15px;
+			-webkit-border-radius: 15px;
+			border: 4px solid #111;
+			background: -moz-linear-gradient(40deg, black 50%, #222);
+			background: -webkit-gradient(linear, left bottom, right top, color-stop(0.5, #000), to(#222));
+		}
+		.exit:before {
+			border-color: #11c;
+			background: #22e;
+			}
+		.enter:after {
+			color: #cc0;
+			content: '\f0e2';
+			}
+			#linux .enter:after {
+				content: '\00e2';
+				}
+		.exit:after {
+			color: #00c;
+			content: '\f0e1';
+			}
+			#linux .exit:after {
+				content: '\00e1';
+				}
+/* 	Objects:
+	====================================================================== */
+	.parrot, .apple, #hero, .book, .pile, .potion, .gold, .wasp {
+		position: absolute;
+		width: 32px;
+		height: 32px;
+		/*-moz-transform: scale(1, 0.5) skew(-45deg, 45deg);
+				-moz-transform-origin: 0% 0%;
+				-webkit-transform: scale(1, 0.5) skew(-45deg, 45deg);
+				-webkit-transform-origin: 0% 0%;*/
+		font-family: 'Webdings';
+	}
+	#hero {
+			left: 50%;
+			top: 50%;
+	}
+	#hero:after {
+		-moz-transform-origin: 100% 0;
+		-webkit-transform-origin: 100% 0;
+		-o-transform-origin: 100% 0;		
+		-moz-transform: skew(0deg, 26.7deg);
+		-webkit-transform: skew(0deg, 26.7deg);
+		-o-transform: skew(0deg, 26.7deg);
+		
+		position: absolute;
+		content: '\f080';
+		left: -32px;
+		top: -32px;
+		color: #006;
+		font-size: 80px;
+		text-shadow: 2px -2px 0px #003;
+	}
+	.pile {
+		background: grey;
+	}
+	.parrot {
+		background: orange;
+	}
+	.apple {
+		background: red;
+	}
+	.book {
+		background: brown;
+	}
+	.potion {
+		background: blue;
+	}
+	.gold {
+		color: yellow;
+		font-size: 40px;
+		text-shadow: 2px -1px 0px #660;
+	}
+	.gold:after {
+/*		-moz-transform-origin: 100% 0;
+		-webkit-transform-origin: 100% 0;
+		-o-transform-origin: 100% 0;		
+		-moz-transform: skew(0deg, 10deg);
+		-webkit-transform: skew(0deg, 10deg);
+		-o-transform: skew(0deg, 10deg);
+*/		
+		position: absolute;
+		content: '\f091';
+		left: 0px;
+		top: 0px;
+	}
+	
+	.wasp {
+		background: yellow;
+	}

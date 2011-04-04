@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+</head>
+<body>
+	<script type="text/javascript">
+	<!--
+	//ie hack
+	if(!Array.indexOf){
+		Array.prototype.indexOf = function(obj){
+			for(var i = 0; i < this.length; ++i){
+				if (this[i] == obj)
+					return i;
+			}
+			return -1;
+		}
+	}
+	-->
+	</script>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript" src="startup.js"></script>
+	<script type="text/javascript" src="shared_ui.js"></script>
+	<script type="text/javascript" src="minigame.js"></script>
+	<script type="text/javascript" src="tui.js"></script>
+	<script type="text/javascript">start("");</script>
+	<link rel="stylesheet" href="tstyle.css" type="text/css">
+</body></html>

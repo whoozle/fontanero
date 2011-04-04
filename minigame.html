@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="tstyle.css" type="text/css">
+</head>
+<body>
+	<div id="mg"></div>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">
+	random = Math.random;
+	floor = Math.floor;
+	
+function rand(min, max) {
+	if (min instanceof Array)
+		return min[floor(random() * min.length)];
+	return floor(min + random() * (max - min));
+}
+
+function roll(probability) {
+	return random() < probability;
+}
+	
+	</script>
+	<script type="text/javascript" src="minigame.js"></script>
+	<script type="text/javascript">
+		run_mini_game(5, 2000000, 10);
+	</script>
+</body>
+</html>
