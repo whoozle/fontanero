@@ -1,6 +1,8 @@
 #!/bin/sh
 DIR=www
 
+mkdir $DIR 2> /dev/null
+
 #echo "optimizing css[ui]..."
 #java -jar tools/yuicompressor-2.4.2.jar -o $DIR/_s.css style.css
 
